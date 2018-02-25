@@ -22,7 +22,6 @@ class Scraper:
         return sorted(objects, key=attrgetter('date'))
 
 
-
     def getPosts(self, username):
         baseURL = 'https://medium.com/@'+username+'/latest?format=json'
 
