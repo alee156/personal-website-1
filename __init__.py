@@ -1,4 +1,4 @@
-from flask import Flask, flash, render_template
+from flask import Flask, flash, render_template, request, jsonify, redirect, make_response, session, redirect, url_for
 from objects.Scraper import Scraper
 
 app = Flask(__name__)
@@ -19,7 +19,9 @@ def portfolioPage():
 
 @app.route('/thoughts')
 def thoughtsPage():
-    return render_template('thoughts.html')
+    posts = scraper.getPosts('esteininger')
+    print posts
+    return render_template('thoughts.html', posts=posts)
 
 @app.route('/contact')
 def contactPage():

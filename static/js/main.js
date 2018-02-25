@@ -68,12 +68,12 @@ jQuery(document).ready(function($) {
 
     $(window).load(function() {
 
-        $(".blog-item-holder").hover(function() {
-                $(".blog-item-holder").not(this).addClass('blur');
-            },
-            function() {
-                $(".blog-item-holder").removeClass('blur');
-            });
+        // $(".blog-item-holder").hover(function() {
+        //         $(".blog-item-holder").not(this).addClass('blur');
+        //     },
+        //     function() {
+        //         $(".blog-item-holder").removeClass('blur');
+        //     });
 
 
         //Set menu

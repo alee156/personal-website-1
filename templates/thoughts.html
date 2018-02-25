@@ -3,120 +3,66 @@
 <div id="content" class="site-content">
     <div id="blog-wrapper">
         <div class="blog-holder center-relative">
-          <div class="row" style="padding-bottom: 5em;">
-            <h2>Here are my thoughts</h2>
-            <p>Writing about xyz...</p>
-          </div>
+            {% for post in posts %}
 
-            <article id="post-2" class="blog-item-holder">
+              {% if loop.index == 1 %}
+                <article id="post-1" class="blog-item-holder featured-post">
+                    <div class="entry-content relative">
+                        <div class="content-1170 center-relative">
+                            <div class="cat-links">
+                                <ul>
+                                    {% for key, value in post.tags.items() %}
+                                    <li>
+                                        <a href="#">{{value}}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="entry-date published">{{post.date}}</div>
+                            <h2 class="entry-title">
+                              <a href="{{post.url}}">{{post.title}}</a>
+                            </h2>
+                            <div class="excerpt">
+                              something here
+                                <a class="read-more" href="{{post.url}}"></a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </article>
+              {% endif %}
+            {% endfor %}
+
+          {% for post in posts[1:] %}
+            <article class="blog-item-holder">
                 <div class="entry-content relative">
                     <div class="content-1170 center-relative">
                         <h2 class="entry-title">
-                                        <a href="single.html">I like to reinvent myself</a>
-                                    </h2>
+                            <a href="{{post.url}}">{{post.title}}</a>
+                          </h2>
                         <div class="cat-links">
                             <ul>
+                                {% for key, value in post.tags.items() %}
                                 <li>
-                                    <a href="#">Science</a>
+                                    <a href="#">{{value}}</a>
                                 </li>
+                                {% endfor %}
                             </ul>
                         </div>
-                        <div class="entry-date published">February 12, 2016</div>
+                        <div class="entry-date published">{{post.date}}</div>
                         <div class="clear"></div>
                     </div>
                 </div>
             </article>
-
-
-            <article id="post-3" class="blog-item-holder">
-                <div class="entry-content relative">
-                    <div class="content-1170 center-relative">
-                        <h2 class="entry-title">
-                                        <a href="single.html">Everything is design</a>
-                                    </h2>
-                        <div class="cat-links">
-                            <ul>
-                                <li>
-                                    <a href="#">Art</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="entry-date published">February 12, 2016</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </article>
-
-
-
-            <article id="post-4" class="blog-item-holder">
-                <div class="entry-content relative">
-                    <div class="content-1170 center-relative">
-                        <h2 class="entry-title">
-                                        <a href="single.html">It’s all about experience</a>
-                                    </h2>
-                        <div class="cat-links">
-                            <ul>
-                                <li>
-                                    <a href="#">Life</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="entry-date published">February 12, 2016</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </article>
-
-
-
-            <article id="post-5" class="blog-item-holder">
-                <div class="entry-content relative">
-                    <div class="content-1170 center-relative">
-                        <h2 class="entry-title">
-                                        <a href="single.html">This is not my code</a>
-                                    </h2>
-                        <div class="cat-links">
-                            <ul>
-                                <li>
-                                    <a href="#">Coding</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="entry-date published">February 12, 2016</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </article>
-
-
-
-            <article id="post-6" class="blog-item-holder">
-                <div class="entry-content relative">
-                    <div class="content-1170 center-relative">
-                        <h2 class="entry-title">
-                                        <a href="single.html">Support human activity</a>
-                                    </h2>
-                        <div class="cat-links">
-                            <ul>
-                                <li>
-                                    <a href="#">Advocacy</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="entry-date published">February 12, 2016</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </article>
+            {% endfor %}
 
         </div>
         <div class="clear"></div>
-        <div class="block load-more-holder">LOAD MORE ENTRIES</div>
+        <!-- <div class="block load-more-holder">LOAD MORE ENTRIES</div> -->
     </div>
 
     <div class="featured-image-holder">
-        <div class="featured-post-image" style="background-image: url(../static/images/demo-images/featured-image.jpg)"></div>
+        <div class="featured-post-image" style="background-image: url('https://images.unsplash.com/photo-1516414447565-b14be0adf13e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a463f291dd7820f9c0d8d6e458bc7631&auto=format&fit=crop&w=1566&q=80')"></div>
 
     </div>
     <div class="clear"></div>

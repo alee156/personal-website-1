@@ -241,9 +241,9 @@ input, textarea, select
 {
     font-family: 'Montserrat', sans-serif, Arial;
     color: #848484;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 23px;
-    max-width: 200px;
+    max-width: 100%;
 }
 
 #header-main-menu
@@ -432,7 +432,7 @@ body.open .site-content
 .blog-holder
 {
     padding-top: 100px;
-    max-width: 470px;
+    max-width: 40em;
     padding-bottom: 85px;
 }
 
@@ -482,7 +482,7 @@ body.open .site-content
 
 .read-more
 {
-    background-image: url('../static/images/arrow.png');
+    background-image: url('../images/arrow.png');
     width: 30px;
     height: 30px;
     background-size: 30px;
@@ -530,10 +530,12 @@ body.open .site-content
 {
     position: fixed;
     height: 100%;
-    width: 50%;
+    /* width: 50%; */
     width: calc(50% - 50px);
     background-size: cover;
     background-position: center center;
+    /* width: 35em;
+    right: 0; */
 }
 
 .cat-links
@@ -1647,4 +1649,19 @@ body.open .site-content
 
 .hidden {
   display:none;
+}
+
+.home-content p{
+  font-size:20px;
+  line-height: 1.8;
+}
+.home-content a{
+  border-bottom: 1px dashed #0797ae;
+  color: #013942;
+  padding: 0 .2em;
+  text-decoration: none !important;
+}
+.home-content a:hover{
+  background: #0797ae !important;
+  color: #fff !important;
 }
