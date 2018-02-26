@@ -20,12 +20,18 @@ def portfolioPage():
 @app.route('/thoughts')
 def thoughtsPage():
     posts = scraper.getPosts('esteininger')
-    print posts
     return render_template('thoughts.html', posts=posts)
 
 @app.route('/contact')
 def contactPage():
     return render_template('contact.html')
+
+
+##APIs
+@app.route('/api/get-medium-posts/<username>')
+def getMediumPosts(username):
+    posts = scraper.getPosts(username)
+    return jsonify(posts)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5010)
