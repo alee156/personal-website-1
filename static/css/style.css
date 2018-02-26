@@ -1653,13 +1653,13 @@ body.open .site-content
   font-size:20px;
   line-height: 1.8;
 }
-.home-content a, .article-header {
+.home-content a, .article-header, .anchor-styled {
   border-bottom: 1px dashed #0797ae;
   color: #013942;
   padding: 0 .2em;
   text-decoration: none !important;
 }
-.home-content a:hover, .article-header:hover{
+.home-content a:hover, .article-header:hover, .anchor-styled:hover{
   background: #0797ae !important;
   color: #fff !important;
 }
