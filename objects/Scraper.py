@@ -13,8 +13,9 @@ class Scraper:
         return json.loads(response.text.split('])}while(1);</x>')[1])
 
     def decodeUTF(self, str):
-        newStr = str.decode('utf-8').strip()
-        return newStr
+        newStr = str.encode('utf-8').strip()
+        decoded = unicode(newStr, 'utf-8')
+        return decoded
 
     def epochToDate(self, epoch):
         ts = datetime.fromtimestamp(int(epoch)/1000).strftime('%B %d, %Y')
@@ -25,30 +26,37 @@ class Scraper:
 
 
     def getPosts(self, username):
-        baseURL = 'https://medium.com/@'+username+'/latest?format=json'
+        try:
+            baseURL = 'https://medium.com/@'+username+'/latest?format=json'
 
-        response = requests.get(baseURL)
-        responseDict = self.cleanJSON(response)
+            response = requests.get(baseURL)
+            responseDict = self.cleanJSON(response)
 
-        cleanDict = []
+            cleanDict = []
 
-        for key,value in responseDict['payload']['references']['Post'].iteritems():
-            f = {}
-            f['title'] = value['title']
-            # f['preview'] = self.decodeUTF(value['content']['subtitle'])
+            for key,value in responseDict['payload']['references']['Post'].iteritems():
+                f = {}
+                f['title'] = value['title']
 
-            f['tags'] = {}
-            count = 0
+                previewStr = ''
+                for preview in value['previewContent']['bodyModel']['paragraphs']:
+                    previewStr += ' ' + preview['text']
+                    f['preview'] = previewStr
 
-            for tag in value['virtuals']['tags']:
-                count += 1
-                f['tags'][count] = tag['name']
+                f['tags'] = {}
+                count = 0
 
-            f['url'] = 'https://medium.com/@' + username + '/' + value['uniqueSlug']
-            f['date'] = self.epochToDate(value['latestPublishedAt'])
-            cleanDict.append(f)
+                for tag in value['virtuals']['tags']:
+                    count += 1
+                    f['tags'][count] = tag['name']
 
-        return cleanDict
+                f['url'] = 'https://medium.com/@' + username + '/' + value['uniqueSlug']
+                f['date'] = self.epochToDate(value['latestPublishedAt'])
+                cleanDict.append(f)
+
+            return cleanDict
+        except:
+            return 'Not Found!'
 
     def jsonize(self, word, meaning):
         return json.dumps({'meaning': meaning[0], 'word': word[0]})

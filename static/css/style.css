@@ -444,7 +444,7 @@ body.open .site-content
 
 .featured-post
 {
-    padding-bottom: 105px;
+    padding-bottom: 50px;
 }
 
 .blog-item-holder.featured-post .entry-content .entry-title
@@ -1672,9 +1672,15 @@ body.open .site-content
 .ethos-list li{
   padding-top:.5em;
 }
+.ethos-list{
+  line-height: 1.2;
+}
 
 .list-title {
   font-family: 'Montserrat', sans-serif, Arial;
   font-weight: 900;
-  color: #4a4a4a;
+  color: #4a4a4a !important;
+}
+.skills-list-section {
+  padding-top:2em;
 }

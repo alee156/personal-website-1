@@ -23,7 +23,7 @@
                               <a class="article-header" href="{{post.url}}">{{post.title}}</a>
                             </h2>
                             <div class="excerpt">
-                              something here
+                              {{post.preview | safe}}
                                 <a class="read-more" href="{{post.url}}"></a>
                             </div>
                             <div class="clear"></div>
@@ -55,7 +55,7 @@
                 </div>
             </article>
             {% endfor %}
-            <p style="float: right;bottom: 0;padding-top: 3em;">These articles were pulled via a <a class="anchor-styled" href="/api/get-medium-posts/esteininger">REST API</a>. 
+            <p style="float: right;bottom: 0;padding-top: 3em;">This page was populated by a <a class="anchor-styled" href="/api/get-medium-posts/esteininger">REST API</a>.
               <!-- Here's the <a class="anchor-styled" href="#">source</a>. -->
             </p>
 
