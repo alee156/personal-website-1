@@ -1672,3 +1672,9 @@ body.open .site-content
 .ethos-list li{
   padding-top:.5em;
 }
+
+.list-title {
+  font-family: 'Montserrat', sans-serif, Arial;
+  font-weight: 900;
+  color: #4a4a4a;
+}

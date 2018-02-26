@@ -29,9 +29,14 @@ def contactPage():
 
 ##APIs
 @app.route('/api/get-medium-posts/<username>')
-def getMediumPosts(username):
+def getMediumPostsAPI(username):
     posts = scraper.getPosts(username)
     return jsonify(posts)
+
+@app.route('/api/get-word-of-the-day')
+def getWODAPI():
+    WOD = scraper.getWOD()
+    return jsonify(WOD)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5010)

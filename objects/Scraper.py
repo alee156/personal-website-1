@@ -2,6 +2,8 @@ import json
 import requests
 from datetime import datetime
 from operator import attrgetter
+import urllib2
+from bs4 import BeautifulSoup
 
 class Scraper:
     def __init__(self):
@@ -47,3 +49,22 @@ class Scraper:
             cleanDict.append(f)
 
         return cleanDict
+
+    def jsonize(self, word, meaning):
+        return json.dumps({'meaning': meaning[0], 'word': word[0]})
+
+    def getWOD(self):
+        content = urllib2.urlopen('https://www.merriam-webster.com/word-of-the-day').read()
+        soup = BeautifulSoup(content, features="lxml")
+        words = []
+        meanings = []
+
+        for div in soup.findAll('div', attrs={'class': 'word-and-pronunciation'}):
+            word = div.find('h1')
+            words.append(word.text.strip())
+
+        for div in soup.findAll('div', attrs={'class': 'wod-definition-container'}):
+            meaning = div.find('p')
+            meanings.append(meaning.text.strip())
+
+        return self.jsonize(meanings, words)
