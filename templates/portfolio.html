@@ -1,15 +1,169 @@
 {% include 'modules/sidebar.html' %}
 
-<!-- Single Content -->
-<div id="content" class="site-content center-relative">
-    <div id="content" class="site-content">
-        <div id="blog-wrapper">
-            <div class="blog-holder center-relative">
-              <h2>Working on it! See portfolio <a href="https://virtuetheory.com#portfolio">here</a></h2>
+<style>
+.portfolio-item {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ef6e30;
+    color: #fff;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    top: 0;
+}
+
+.portfolio-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.portfolio-info h3 {
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.portfolio-info a {
+    font-size: 30px;
+    color: #fff;
+}
+
+.portfolio-info a:hover {
+    color: #bb460d;
+}
+
+</style>
+
+<div id="content" class="site-content">
+    <div id="blog-wrapper">
+        <div class="blog-holder center-relative">
+
+            <div class="portfolio-content">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="portfolio-item">
+                            <img class="img-responsive" src="https://demo.themeregion.com/geek-wrap/images/portfolio/1.jpg" alt="Image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <a href="https://demo.themeregion.com/geek-wrap/images/portfolio/1.jpg"><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                                    <h3>Book Cover</h3>
+                                    <p>Print Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="portfolio-item">
+                            <img class="img-responsive" src="https://demo.themeregion.com/geek-wrap/images/portfolio/2.jpg" alt="Image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <a href="https://demo.themeregion.com/geek-wrap/images/portfolio/2.jpg"><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                                    <h3>Book Cover</h3>
+                                    <p>Print Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="portfolio-item">
+                            <img class="img-responsive" src="https://demo.themeregion.com/geek-wrap/images/portfolio/3.jpg" alt="Image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <a href="https://demo.themeregion.com/geek-wrap/images/portfolio/3.jpg"><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                                    <h3>Book Cover</h3>
+                                    <p>Print Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="portfolio-item">
+                            <img class="img-responsive" src="https://demo.themeregion.com/geek-wrap/images/portfolio/4.jpg" alt="Image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <a href="https://demo.themeregion.com/geek-wrap/images/portfolio/4.jpg"><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                                    <h3>Book Cover</h3>
+                                    <p>Print Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="portfolio-item">
+                            <img class="img-responsive" src="https://demo.themeregion.com/geek-wrap/images/portfolio/5.jpg" alt="Image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <a href="https://demo.themeregion.com/geek-wrap/images/portfolio/5.jpg"><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                                    <h3>Book Cover</h3>
+                                    <p>Print Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="portfolio-item">
+                            <img class="img-responsive" src="https://demo.themeregion.com/geek-wrap/images/portfolio/6.jpg" alt="Image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <a href="https://demo.themeregion.com/geek-wrap/images/portfolio/6.jpg"><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                                    <h3>Book Cover</h3>
+                                    <p>Print Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="portfolio-item">
+                            <img class="img-responsive" src="https://demo.themeregion.com/geek-wrap/images/portfolio/7.jpg" alt="Image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <a href="https://demo.themeregion.com/geek-wrap/images/portfolio/7.jpg"><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                                    <h3>Book Cover</h3>
+                                    <p>Print Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="portfolio-item">
+                            <img class="img-responsive" src="https://demo.themeregion.com/geek-wrap/images/portfolio/8.jpg" alt="Image">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <a href="https://demo.themeregion.com/geek-wrap/images/portfolio/8.jpg"><i class="fa fa-camera-retro" aria-hidden="true"></i></a>
+                                    <h3>Book Cover</h3>
+                                    <p>Print Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+    <div class="featured-image-holder">
+        <div class="featured-post-image" style="background-image: url('../static/images/me.jpg')"></div>
+    </div>
+    <div class="clear"></div>
+</div>
 
 {% include 'modules/foot.html' %}
