@@ -9,10 +9,6 @@ scraper = Scraper()
 def homePage():
     return render_template('index.html')
 
-@app.route('/about')
-def aboutPage():
-    return render_template('about.html')
-
 @app.route('/portfolio')
 def portfolioPage():
     return render_template('portfolio.html')
@@ -22,10 +18,9 @@ def thoughtsPage():
     posts = scraper.getPosts('esteininger')
     return render_template('thoughts.html', posts=posts)
 
-@app.route('/contact')
-def contactPage():
-    return render_template('contact.html')
-
+@app.route('/test')
+def testPage():
+    return render_template('test.html')
 
 ##APIs
 @app.route('/api/get-medium-posts/<username>')
