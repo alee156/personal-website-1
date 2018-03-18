@@ -1,7 +1,7 @@
 import json
 import requests
 from datetime import datetime
-from operator import attrgetter
+from operator import attrgetter, itemgetter
 import urllib2
 from bs4 import BeautifulSoup
 
@@ -22,8 +22,8 @@ class Scraper:
         return ts
 
     def sortArray(self, objects):
-        return sorted(objects, key=attrgetter('date'))
-
+        #i have no idea why this works
+        return sorted(objects, key=lambda objects: (objects['date']), reverse=True)
 
     def getPosts(self, username):
         try:
@@ -54,9 +54,11 @@ class Scraper:
                 f['date'] = self.epochToDate(value['latestPublishedAt'])
                 cleanDict.append(f)
 
-            return cleanDict
-        except:
+            return self.sortArray(cleanDict)
+        except Exception as e:
+            print e
             return 'Not Found!'
+            
 
     def jsonize(self, word, meaning):
         return json.dumps({'meaning': meaning[0], 'word': word[0]})
