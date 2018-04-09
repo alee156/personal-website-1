@@ -42,6 +42,10 @@
         height: 100%;
     }
 
+    .single-content a:hover {
+        text-decoration: none;
+    }
+
     .filters {
         width: 100%;
         text-align: center;
@@ -72,77 +76,167 @@
         border: 1px solid #ccc;
         border-radius: 15px;
     }
+
     .single-content .client-bar {
-    display: block;
-    position: relative;
-    height: 24px;
-    background-color: #ddd;
-    width: 100%;
-    color: #6a6a6a;
-    z-index: 10;
-}
+        display: block;
+        position: relative;
+        height: 24px;
+        background-color: #ddd;
+        width: 100%;
+        color: #6a6a6a;
+        z-index: 10;
+    }
 
-.single-content .client-bar .red-dot {
-  height: 12px;
-  width: 12px;
-  display: inline-block;
-  background-color: #ff5f57;
-  border-radius: 50%;
-  position: absolute;
-  top: 6px;
-  left: 10px;
-}
+    .single-content .client-bar .red-dot {
+        height: 12px;
+        width: 12px;
+        display: inline-block;
+        background-color: #ff5f57;
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: 10px;
+    }
 
-.single-content .client-bar .yellow-dot {
-  height: 12px;
-  width: 12px;
-  display: inline-block;
-  background-color: #ffbd2e;
-  border-radius: 50%;
-  position: absolute;
-  top: 6px;
-  left: 25px;
-}
-.single-content .client-bar .green-dot {
-  height: 12px;
-  width: 12px;
-  display: inline-block;
-  background-color: #28ca41;
-  border-radius: 50%;
-  position: absolute;
-  top: 6px;
-  left: 41px;
-}
+    .single-content .client-bar .yellow-dot {
+        height: 12px;
+        width: 12px;
+        display: inline-block;
+        background-color: #ffbd2e;
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: 25px;
+    }
 
-.single-content .client-bar h2{
-    content: attr(data-text);
-    text-align: center;
-    font-size: 10px;
-    text-transform: uppercase;
-    font-family: MontSerrat,Tahoma,Arial,sans-serif;
-    font-weight: 700;
-    line-height: 26px;
-    letter-spacing: -.5px;
-    color: #8a8a8a;
-    display:inline;
-}
+    .single-content .client-bar .green-dot {
+        height: 12px;
+        width: 12px;
+        display: inline-block;
+        background-color: #28ca41;
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: 41px;
+    }
 
-.blog-holder {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    padding-left: 0%;
-    padding-right: 0%;
-    max-width: 100em;
-}
-.single-content {
-  padding:1em;
-}
-.content.grid {
-  /* display: table; */
-  width: 80%;
-  /* margin: 0px auto; */
-}
+    .single-content .client-bar h2 {
+        content: attr(data-text);
+        text-align: center;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-family: MontSerrat, Tahoma, Arial, sans-serif;
+        font-weight: 700;
+        line-height: 26px;
+        letter-spacing: -.5px;
+        color: #8a8a8a;
+        display: inline;
+    }
 
+    .blog-holder {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 0%;
+        padding-right: 0%;
+        max-width: 100em;
+    }
+
+    .single-content {
+        padding: 1em;
+    }
+
+    .content.grid {
+        /* display: table; */
+        width: 80%;
+        /* margin: 0px auto; */
+    }
+
+    .screen-image {
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, .2);
+    }
+
+    .screen-image:hover {
+        background: rgb(0, 0, 0) !important;
+        opacity: 1;
+        transition: all 1s;
+        -webkit-transition: all 1s;
+    }
+
+    /* .screen-image:hover li{
+      opacity:1;
+    }
+
+    .tags {
+        opacity: 1;
+        position: absolute;
+        text-align: left;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 8;
+        display: block;
+    }
+
+    .tags .inner-tag {
+        display: block;
+        height: 100%;
+        margin: 0 auto;
+        width: 80%;
+        position: relative;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .tags .inner-tag ul {
+        display: block;
+        text-align: center;
+        position: relative;
+        -moz-transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+
+
+    .tags li {
+        display: inline;
+        padding: 0 .5em;
+        background-color: #313131;
+        color: #999;
+        border-width: 1px 1px 2px 1px;
+        border-style: solid;
+        border-color: #222;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-family: MontSerrat, Tahoma, Arial, sans-serif;
+        font-weight: 700;
+        font-size: .75em;
+        box-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
+        margin: 2px;
+        opacity: 0;
+        position: relative;
+        text-shadow: -1px -1px 0 #3f3f3f, -1px 0 0 #3f3f3f, -1px 1px 0 #3f3f3f, 0 -1px 0 #3f3f3f, 0 0 0 #3f3f3f, 0 1px 0 #3f3f3f, 1px -1px 0 #3f3f3f, 1px 0 0 #3f3f3f, 1px 1px 0 #3f3f3f;
+        -moz-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -moz-transform-origin: 50% 50% -10px;
+        -webkit-transform-origin: 50% 50% -10px;
+        transform-origin: 50% 50% -10px;
+        -moz-transform-style: flat;
+        -webkit-transform-style: flat;
+        transform-style: flat;
+        -moz-transform: rotateX(92deg);
+        -ms-transform: rotateX(92deg);
+        -webkit-transform: rotateX(92deg);
+        transform: rotateX(92deg);
+        -moz-transition: -moz-transform .285s cubic-bezier(.5, 1.5, .5, 1.5);
+        -o-transition: -o-transform .285s cubic-bezier(.5, 1.5, .5, 1.5);
+        -webkit-transition: -webkit-transform .285s cubic-bezier(.5, 1.5, .5, 1.5);
+        transition: transform .285s cubic-bezier(.5, 1.5, .5, 1.5);
+    } */
 </style>
 
 <div id="content" class="site-content">
@@ -159,39 +253,69 @@
 
             <div class="content grid">
                 <div class="single-content webprojects webdev grid-item">
-                    <div class="client-bar">
-                        <h2>Meports</h2>
-                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    <div class="screen-image">
+                        <a href="https://meports.com" target="_blank">
+                            <div class="client-bar">
+                                <h2>Meports</h2>
+                                <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                            </div>
+                            <img class="p2" src="../static/images/portfolio/meports1.png">
+                            <!-- <div class="tags">
+                                <div class="inner-tag">
+                                    <ul>
+                                        <li>SASS</li>
+                                        <li>ANIMATIONS</li>
+                                        <li>BACKBONEJS</li>
+                                        <li>SNAPSVG</li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </a>
                     </div>
-                    <a href="https://meports.com" target="_blank"><img class="p2" src="../static/images/portfolio/meports1.png">
                 </div>
                 <div class="single-content startups webdev grid-item">
-                    <div class="client-bar">
-                        <h2>Fandemic</h2>
-                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    <div class="screen-image">
+                        <a href="https://fandemic.co" target="_blank">
+                            <div class="client-bar">
+                                <h2>Fandemic</h2>
+                                <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                            </div>
+                            <img class="p2" src="../static/images/portfolio/fan1.png">
+                        </a>
                     </div>
-                    <a href="https://fandemic.co" target="_blank"><img class="p2" src="../static/images/portfolio/fan1.png">
                 </div>
                 <div class="single-content webprojects webdev grid-item">
-                    <div class="client-bar">
-                        <h2>Yogilytics</h2>
-                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    <div class="screen-image">
+                        <a href="http://yogilytics.com" target="_blank">
+                            <div class="client-bar">
+                                <h2>Yogilytics</h2>
+                                <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                            </div>
+                            <img class="p2" src="../static/images/portfolio/yogilytics1.png">
+                        </a>
                     </div>
-                    <a href="http://yogilytics.com" target="_blank"><img class="p2" src="../static/images/portfolio/yogilytics1.png">
                 </div>
                 <div class="single-content webprojects webdev grid-item">
-                    <div class="client-bar">
-                        <h2>CoinCap Basket</h2>
-                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    <div class="screen-image">
+                        <a href="http://coincapbasket.com" target="_blank">
+                            <div class="client-bar">
+                                <h2>CoinCap Basket</h2>
+                                <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                            </div>
+                            <img class="p2" src="../static/images/portfolio/coincapbasket1.png">
+                        </a>
                     </div>
-                    <a href="http://coincapbasket.com" target="_blank"><img class="p2" src="../static/images/portfolio/coincapbasket1.png">
                 </div>
                 <div class="single-content startups webdev grid-item">
-                    <div class="client-bar">
-                        <h2>Compared Care</h2>
-                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    <div class="screen-image">
+                        <a href="https://technical.ly/baltimore/2014/07/08/compared-care-beta-healthcare/" target="_blank">
+                            <div class="client-bar">
+                                <h2>Compared Care</h2>
+                                <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                            </div>
+                            <img class="p2" src="../static/images/portfolio/CC1.png">
+                        </a>
                     </div>
-                    <a href="https://technical.ly/baltimore/2014/07/08/compared-care-beta-healthcare/" target="_blank"><img class="p2" src="../static/images/portfolio/CC1.png">
                 </div>
             </div>
         </div>
