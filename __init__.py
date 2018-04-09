@@ -1,5 +1,6 @@
 from flask import Flask, flash, render_template, request, jsonify, redirect, make_response, session, redirect, url_for
 from objects.Scraper import Scraper
+from objects.Portfolio import Portfolio
 
 app = Flask(__name__)
 
@@ -11,7 +12,10 @@ def homePage():
 
 @app.route('/portfolio')
 def portfolioPage():
-    return render_template('portfolio.html')
+    # portfolio = Portfolio()
+    # items = portfolio.getAllPortfolioItems()
+    # return render_template('portfolio.html', items=items)
+    return render_template('portfolio.html')    
 
 @app.route('/thoughts')
 def thoughtsPage():

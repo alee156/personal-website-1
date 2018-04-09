@@ -1,61 +1,199 @@
 {% include 'modules/sidebar.html' %}
 
 <style>
-    .portfolio-item {
-        position: relative;
-        margin-bottom: 30px;
-        overflow: hidden;
+    .startups {
+        text-align: center;
     }
 
-    .portfolio-overlay {
-        position: absolute;
-        top: -100%;
-        left: 0;
+    .startups img {
+        width: 50px;
+    }
+
+    .p1:hover,
+    .p2:hover {
+        opacity: .3;
+    }
+
+    h4 {
+        color: grey;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    #portfolio p {
+        color: grey;
+        font-size: 12px;
+        font-weight: 200;
+    }
+
+    a {
+        color: #cd6839;
+    }
+
+    .content {
         width: 100%;
+        margin: 0 auto;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .single-content img {
+        width: 290px;
         height: 100%;
-        background-color: #ef6e30;
-        color: #fff;
-        -webkit-transition: all 500ms;
-        -moz-transition: all 500ms;
-        -ms-transition: all 500ms;
-        -o-transition: all 500ms;
-        transition: all 500ms;
     }
 
-    .portfolio-item:hover .portfolio-overlay {
-        top: 0;
+    .filters {
+        width: 100%;
+        text-align: center;
     }
 
-    .portfolio-info {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        font-size: 16px;
-        font-weight: normal;
-        padding-left: 30px;
-        padding-bottom: 20px;
+    ul {
+        list-style: none;
+        padding: 20px 0;
     }
 
-    .portfolio-info h3 {
-        color: #fff;
-        margin-top: 5px;
-        margin-bottom: 0;
+    li {
+        display: inline;
+        padding: 10px 25px;
+        font-size: 14px;
+        color: #636363;
+        font-weight: 400;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: .2em;
     }
 
-    .portfolio-info a {
-        font-size: 30px;
-        color: #fff;
+    li:hover {
+        color: #a6a6a6;
     }
 
-    .portfolio-info a:hover {
-        color: #bb460d;
+    li.active {
+        color: #ccc;
+        border: 1px solid #ccc;
+        border-radius: 15px;
     }
+    .single-content .client-bar {
+    display: block;
+    position: relative;
+    height: 24px;
+    background-color: #ddd;
+    width: 100%;
+    color: #6a6a6a;
+    z-index: 10;
+}
+
+.single-content .client-bar .red-dot {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background-color: #ff5f57;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 10px;
+}
+
+.single-content .client-bar .yellow-dot {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background-color: #ffbd2e;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 25px;
+}
+.single-content .client-bar .green-dot {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background-color: #28ca41;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 41px;
+}
+
+.single-content .client-bar h2{
+    content: attr(data-text);
+    text-align: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: MontSerrat,Tahoma,Arial,sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -.5px;
+    color: #8a8a8a;
+    display:inline;
+}
+
+.blog-holder {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 0%;
+    padding-right: 0%;
+    max-width: 100em;
+}
+.single-content {
+  padding:1em;
+}
+.content.grid {
+  /* display: table; */
+  width: 80%;
+  /* margin: 0px auto; */
+}
+
 </style>
 
 <div id="content" class="site-content">
     <div id="blog-wrapper">
         <div class="blog-holder center-relative">
-            <h2>Portflio temporarily housed on <a href="https://virtuetheory.com/#portfolio">VirtueTheory's page</a></h2>
+            <div class="filters filter-button-group">
+                <ul>
+                    <h4>
+          		    <li class="active" data-filter="*">All</li>
+          		    <li data-filter=".webprojects">Web Projects</li>
+          		    <li data-filter=".startups">Startups</li>
+          		  </h4></ul>
+            </div>
+
+            <div class="content grid">
+                <div class="single-content webprojects webdev grid-item">
+                    <div class="client-bar">
+                        <h2>Meports</h2>
+                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    </div>
+                    <a href="https://meports.com" target="_blank"><img class="p2" src="../static/images/portfolio/meports1.png">
+                </div>
+                <div class="single-content startups webdev grid-item">
+                    <div class="client-bar">
+                        <h2>Fandemic</h2>
+                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    </div>
+                    <a href="https://fandemic.co" target="_blank"><img class="p2" src="../static/images/portfolio/fan1.png">
+                </div>
+                <div class="single-content webprojects webdev grid-item">
+                    <div class="client-bar">
+                        <h2>Yogilytics</h2>
+                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    </div>
+                    <a href="http://yogilytics.com" target="_blank"><img class="p2" src="../static/images/portfolio/yogilytics1.png">
+                </div>
+                <div class="single-content webprojects webdev grid-item">
+                    <div class="client-bar">
+                        <h2>CoinCap Basket</h2>
+                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    </div>
+                    <a href="http://coincapbasket.com" target="_blank"><img class="p2" src="../static/images/portfolio/coincapbasket1.png">
+                </div>
+                <div class="single-content startups webdev grid-item">
+                    <div class="client-bar">
+                        <h2>Compared Care</h2>
+                        <i class="red-dot"></i><i class="yellow-dot"></i><i class="green-dot"></i>
+                    </div>
+                    <a href="https://technical.ly/baltimore/2014/07/08/compared-care-beta-healthcare/" target="_blank"><img class="p2" src="../static/images/portfolio/CC1.png">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -66,3 +204,21 @@
 </div>
 
 {% include 'modules/foot.html' %}
+<script>
+    jQuery(document).ready(function() {
+
+        jQuery('.grid').isotope({
+            itemSelector: '.grid-item',
+        });
+
+        // filter items on button click
+        jQuery('.filter-button-group').on('click', 'li', function() {
+            var filterValue = jQuery(this).attr('data-filter');
+            jQuery('.grid').isotope({
+                filter: filterValue
+            });
+            jQuery('.filter-button-group li').removeClass('active');
+            jQuery(this).addClass('active');
+        });
+    })
+</script>

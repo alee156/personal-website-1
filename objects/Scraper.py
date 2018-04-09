@@ -2,7 +2,7 @@ import json
 import requests
 from datetime import datetime
 from operator import attrgetter, itemgetter
-import urllib2
+import urllib
 from bs4 import BeautifulSoup
 
 class Scraper:
@@ -56,9 +56,8 @@ class Scraper:
 
             return self.sortArray(cleanDict)
         except Exception as e:
-            print e
             return 'Not Found!'
-            
+
 
     def jsonize(self, word, meaning):
         return json.dumps({'meaning': meaning[0], 'word': word[0]})
