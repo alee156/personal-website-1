@@ -54,6 +54,8 @@ class Scraper:
                 f['date'] = self.epochToDate(value['latestPublishedAt'])
                 cleanDict.append(f)
 
+            print (cleanDict)
+
             return self.sortArray(cleanDict)
         except Exception as e:
             return 'Not Found!'
